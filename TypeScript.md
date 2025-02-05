@@ -1,7 +1,7 @@
 # **Type Script**
 
 ## 🔷 Mục lục
-- **[TypeScript Basic & Basic Types]**
+- **[TypeScript Basic & Basic Types](#typescript--basic-types)**
 - **[The TypeScript Compiler (and its Configuration)]**
 - **[ Next-generation JavaScript & TypeScript]**
 - **[ Classes & Interfaces]**
@@ -84,5 +84,48 @@
         function throwError(message: string): never {  
             throw new Error(message);  
         } 
-        
+
         ```
+
+### The TypeScript Compiler (and its Configuration)
+
+- **The TypeScript Compiler** : Trình biên dịch TypeScript  là công cụ giúp biên dịch mã TypeScript thành mã JavaScript. `tsc` chuyển đổi mã TypeScript sang JavaScript mà trình duyệt hoặc môi trường thực thi có thể hiểu được.
+
+- **Setting TypeScript**: Có thể cài đặt TypeScript toàn cầu hoặc trong một dự án cụ thể thông qua npm (Node Package Manager).
+    ```bash
+        # Cài đặt TypeScript toàn cầu  
+        npm install -g typescript  
+        
+        # Cài đặt TypeScript trong dự án  
+        npm install --save-dev typescript  
+    ```
+
+- **Configuration** : có thể tạo một tệp cấu hình cho `tsc` để định nghĩa các tùy chọn biên dịch trong một dự án. Tệp cấu hình này thường được đặt tên là `tsconfig.json`
+    + Dưới đây là một số tùy chọn phổ biến trong tệp `tsconfig.json`:
+     ```json
+        {  
+        "compilerOptions": {  
+            "target": "ES6",                      // Chọn phiên bản ECMAScript mà bạn muốn biên dịch  
+            "module": "commonjs",                 // Chọn hệ thống module  
+            "outDir": "./dist",                   // Thư mục đầu ra cho các tệp JavaScript  
+            "rootDir": "./src",                   // Thư mục gốc chứa mã TypeScript  
+            "strict": true,                        // Bật tất cả các tùy chọn kiểm tra nghiêm ngặt  
+            "esModuleInterop": true,               // Cung cấp tính tương thích với các module ES  
+            "skipLibCheck": true,                  // Bỏ qua kiểm tra kiểu cho các thư viện  
+        },  
+        "include": [  
+            "src/**/*"                             // Đường dẫn tới mã nguồn TypeScript  
+        ],  
+        "exclude": [  
+            "node_modules",                        // Thư mục loại trừ  
+            "**/*.spec.ts"                         // Loại trừ các tệp thử nghiệm  
+        ]  
+        }  
+     ```
+- **Một số Tùy chọn Quan trọng trong `tsconfig.json`** :
+    + `target`: Xác định phiên bản ECMAScript mà bạn muốn biên dịch đến (ví dụ: `ES5`, `ES6`, `ESNext`)
+    + `module`: Chọn hệ thống module (ví dụ: `commonjs`, `esnext`, `amd`).
+    + `outDir`: Xác định thư mục để lưu các tệp JavaScript đã biên dịch.
+    + `rootDir`: Đặt thư mục gốc cho mã nguồn TypeScript.
+    + `strict`: Bật tất cả các cài đặt hệ thống kiểu nghiêm ngặt
+    + `esModuleInterop`: Giúp để tương thích với mã JavaScript truyền thống.
