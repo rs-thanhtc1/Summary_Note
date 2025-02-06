@@ -261,8 +261,8 @@
     + Sử dụng `Interfaces`: Bạn có thể sử dụng `Interfaces` để định nghĩa kiểu cho một đối tượng.
         ```TypeScript
             const person: Person = {  
-                name: "Alice",  
-                age: 30,  
+                name: "Thanh",  
+                age: 24,  
                 introduce() {  
                     console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);  
                 }  
@@ -277,8 +277,8 @@
         }  
         
         const employee: Employee = {  
-            name: "Bob",  
-            age: 40,  
+            name: "Cong Thanh",  
+            age: 24,  
             position: "Developer",  
             introduce() {  
                 console.log(`Hi, I'm ${this.name}, a ${this.position}.`);  
