@@ -175,3 +175,113 @@
     + **Sử dụng Tính năng Mới** : TypeScript có thể tận dụng tất cả các tính năng mới trong Next-generation JavaScript, cho phép lập trình viên sử dụng các cú pháp và cải tiến hiện đại.
     + **Tự động hóa Kiểm tra Kiểu** : Sử dụng TypeScript cùng với các tính năng mới của JavaScript giúp phát hiện lỗi khi biên dịch, nâng cao chất lượng ứng dụng.
     + **Hỗ trợ Mô-đun và Tổ chức Mã** : Cả hai đều hỗ trợ mã hóa mô-đun, giúp tăng cường khả năng tái sử dụng mã và tổ chức dự án một cách khoa học hơn.
+
+### Classes & Interfaces 
+
+- **Classes** :  tạo ra các đối tượng và định nghĩa các thuộc tính và phương thức. `Class` cho phép bạn xây dựng các cấu trúc đối tượng phức tạp và tổ chức mã tốt hơn.
+
+    + Có thể định nghĩa một lớp bằng từ khóa `class`.
+        ```TypeScript
+            class Person {  
+            name: string;  
+            age: number;  
+        
+            constructor(name: string, age: number) {  
+                this.name = name;  
+                this.age = age;  
+            }  
+        
+            introduce(): void {  
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);  
+            }  
+        }  
+        ```
+    + Có thể tạo một đối tượng từ lớp bằng cách sử dụng từ khóa `new`.
+        ```TypeScript
+            const person = new Person("Thanh", 24);  
+            person.introduce(); 
+        ```
+
+- **Inheritance(Tính kế thừa)** : TypeScript hỗ trợ kế thừa, cho phép bạn tạo một lớp mới dựa trên một lớp hiện có.
+
+    + Ví dụ :
+        ```TypeScript
+            class Employee extends Person {  
+                position: string;  
+            
+                constructor(name: string, age: number, position: string) {  
+                    super(name, age); // Gọi constructor của lớp cha  
+                    this.position = position;  
+                }  
+            
+                introduce(): void {  
+                    console.log(`I'm ${this.name}, a ${this.position}.`);  
+                }  
+            }  
+            
+            const employee = new Employee("Thanh", 24, "developer");  
+            employee.introduce(); // I'm Thanh, a developer.  
+        ```
+- **Modifier** : TypeScript hỗ trợ các modifier để kiểm soát quyền truy cập vào các thuộc tính và phương thức.
+
+    + `public:` Mặc định, có thể truy cập từ bất kỳ đâu.
+    + `private`: Chỉ có thể truy cập từ trong lớp.
+    + `protected`: Có thể truy cập từ trong lớp và lớp con.
+    + Ví dụ : 
+        ```TypeScript
+            class Animal {  
+                protected species: string;  
+            
+                constructor(species: string) {  
+                    this.species = species;  
+                }  
+            }  
+            
+            class Dog extends Animal {  
+                bark(): void {  
+                    console.log(`Woof! I'm a ${this.species}.`);  
+                }  
+            }  
+            
+            const dog = new Dog("dog");  
+            dog.bark();  
+        ```
+
+- **Interfaces** : Có thể định nghĩa một giao diện bằng từ khóa `interface`.
+
+    + Ví dụ :
+        ```TypeScript
+            interface Person {  
+                name: string;  
+                age: number;  
+                introduce(): void;  
+            } 
+        ```
+    
+    + Sử dụng `Interfaces`: Bạn có thể sử dụng `Interfaces` để định nghĩa kiểu cho một đối tượng.
+        ```TypeScript
+            const person: Person = {  
+                name: "Alice",  
+                age: 30,  
+                introduce() {  
+                    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);  
+                }  
+            };  
+        ```
+
+- **Kế thừa Giao diện** : Giao diện (`Interface`) cũng hỗ trợ kế thừa, cho phép bạn tạo ra một giao diện mới từ một giao diện hiện có.
+
+    ```TypeScript
+        interface Employee extends Person {  
+            position: string;  
+        }  
+        
+        const employee: Employee = {  
+            name: "Bob",  
+            age: 40,  
+            position: "Developer",  
+            introduce() {  
+                console.log(`Hi, I'm ${this.name}, a ${this.position}.`);  
+            }  
+        };  
+    ```
