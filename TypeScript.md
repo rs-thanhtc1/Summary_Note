@@ -2,8 +2,8 @@
 
 ## 🔷 Mục lục
 - **[TypeScript Basic & Basic Types](#typescript--basic-types)**
-- **[The TypeScript Compiler (and its Configuration)]**
-- **[ Next-generation JavaScript & TypeScript]**
+- **[The TypeScript Compiler (and its Configuration)](#the-typescript-compiler-and-its-configuration)**
+- **[ Next-generation JavaScript & TypeScript](#next-generation-javascript--typescript)**
 - **[ Classes & Interfaces]**
 - **[ Advanced Types]**
 - **[ Generics]**
@@ -129,3 +129,49 @@
     + `rootDir`: Đặt thư mục gốc cho mã nguồn TypeScript.
     + `strict`: Bật tất cả các cài đặt hệ thống kiểu nghiêm ngặt
     + `esModuleInterop`: Giúp để tương thích với mã JavaScript truyền thống.
+
+### Next-generation JavaScript & TypeScript
+
+- **ECMAScript (ES)** : là tiêu chuẩn cho ngôn ngữ JavaScript, và các phiên bản mới của nó thường được gọi là Next-generation JavaScript. Những phiên bản mới nhất của ECMAScript mang đến nhiều tính năng và cải tiến giúp lập trình viên viết mã dễ hơn và hiệu quả hơn.
+- **Tính năng nổi bật của ECMAScript Next** :
+    + **Arrow Functions** : Cú pháp ngắn gọn cho việc định nghĩa hàm, tự động liên kết với ngữ cảnh `this` bên ngoài.
+        ```javascript
+        const add = (a, b) => a + b;  
+        ```
+    + **Class Syntax** : Cung cấp cú pháp rõ ràng cho lập trình hướng đối tượng (OOP).
+        ```javascript
+            class Animal {  
+                constructor(name) {  
+                    this.name = name;  
+                }  
+                speak() {  
+                    console.log(`${this.name} makes a noise.`);  
+                }  
+            }  
+        ```
+    + **Modules** : Hỗ trợ chia nhỏ mã thành các module dễ quản lý hơn.
+        ```javascript
+            // export.js  
+            export const PI = 3.14;  
+
+            // import.js  
+            import { PI } from './export.js';  
+        ```
+    + **Async/Await** : Cung cấp cách viết mã bất đồng bộ đơn giản giống như mã đồng bộ.
+        ```javascript
+            async function fetchData() {  
+            const response = await fetch('url');  
+            const data = await response.json();  
+            return data;  
+            }  
+        ```
+    + **Spread Operator** : Giúp làm việc với các mảng và đối tượng một cách dễ dàng hơn.
+        ```javascript
+            const arr1 = [1, 2, 3];  
+            const arr2 = [...arr1, 4, 5]; // [1, 2, 3, 4, 5]  
+        ```
+
+- **Next-generation JavaScript và TypeScript** không chỉ tồn tại độc lập mà còn hỗ trợ lẫn nhau:
+    + **Sử dụng Tính năng Mới** : TypeScript có thể tận dụng tất cả các tính năng mới trong Next-generation JavaScript, cho phép lập trình viên sử dụng các cú pháp và cải tiến hiện đại.
+    + **Tự động hóa Kiểm tra Kiểu** : Sử dụng TypeScript cùng với các tính năng mới của JavaScript giúp phát hiện lỗi khi biên dịch, nâng cao chất lượng ứng dụng.
+    + **Hỗ trợ Mô-đun và Tổ chức Mã** : Cả hai đều hỗ trợ mã hóa mô-đun, giúp tăng cường khả năng tái sử dụng mã và tổ chức dự án một cách khoa học hơn.
